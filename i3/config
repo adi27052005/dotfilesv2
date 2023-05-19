@@ -173,8 +173,8 @@ mode "resize" {
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Up resize grow height 10 px or 10 ppt
-        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
@@ -188,6 +188,7 @@ bindsym $mod+r mode "resize"
 
 # Custom
 exec_always picom --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 200 &
+# exec_always picom &
 exec_always nitrogen --restore &
 exec_always $HOME/.config/polybar/launch.sh
 
@@ -197,7 +198,7 @@ default_floating_border pixel 2
 gaps inner 4
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #a7c080 #285577 #ffffff #d3c6aa   #60783b
+client.focused          #a7c080 #285577 #ffffff #928374   #a7c080
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #1e2326 #222222 #888888 #292d2e   #1e2326
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -206,3 +207,5 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #1e2326
 
 bindsym $mod+Shift+w exec "firefox"
+bindsym $mod+x exec $HOME/.config/scripts/powermenu.sh
+bindsym $mod+Shift+Return exec $HOME/.config/scripts/yt.sh
