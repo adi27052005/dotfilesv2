@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# PARU
+
+mkdir $HOME/.config
+git clone https://aur.archlinux.org/paru.git $HOME/.config/paru
+cd $HOME/.config/paru
+makepkg -si
+cd ~
+
 # PACKAGES
 
 paru -S xorg xorg-xinit vim firefox alacritty neovim-nightly-bin git nitrogen picom-pijulius-git neofetch polybar rofi zsh i3-wm i3status slock xclip scrot ttf-jetbrains-mono-nerd mpv ttf-daddytime-mono-nerd ttf-fira-sans lsd npm nodejs unzip zenity libnotify bluez bluez-utils dunst lxappearance-gtk3 btop cava gpick thunar imagemagick everforest-gtk-theme-git usbutils pipes.sh usbutils
@@ -9,10 +17,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # CLONING DOTS
 
-mkdir .config
-cd .config
-git clone https://github.com/adi27052005/dotfiles
-cd ~
+git clone https://github.com/adi27052005/dotfiles $HOME/.config/dotfiles
 
 # MOVING DOTS
 
