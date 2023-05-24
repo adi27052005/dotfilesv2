@@ -22,8 +22,15 @@ git clone https://github.com/adi27052005/dotfiles $HOME/.config/dotfiles
 # MOVING DOTS
 
 cp -r $HOME/.config/dotfiles/* $HOME/.config/
-mv $HOME/.config/tmux.conf $HOME/
 rm -rf $HOME/.config/dotfiles
+
+# TMUX
+mv $HOME/.config/tmux.conf $HOME/
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux source $HOME/.tmux.conf
+# note: <c-s> + shift + i -> installing tmux plugins
+# <c-s> + " -> splitting panes
+# <c-h/j/k/l> -> switching panes
 
 # EXECUTABLE SCRIPTS
 
