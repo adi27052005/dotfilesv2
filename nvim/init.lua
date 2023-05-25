@@ -87,7 +87,7 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {} },
+      -- { 'j-hui/fidget.nvim', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
@@ -208,7 +208,8 @@ require('lazy').setup({
   },
   { 'windwp/nvim-ts-autotag' },
   { "derektata/lorem.nvim" },
-  { 'xiyaowong/nvim-transparent' }
+  { 'xiyaowong/nvim-transparent' },
+  { 'dracula/vim' }
 
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -542,4 +543,6 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 
 -- COLORSCHEME
-vim.cmd.colorscheme 'onedark'
+vim.cmd.colorscheme 'dracula'
+vim.cmd [[ set cursorline ]]
+vim.cmd [[ set scrolloff=8 ]]

@@ -10,10 +10,8 @@ cd ~
 
 # PACKAGES
 
-paru -S xorg xorg-xinit vim firefox alacritty neovim-nightly-bin git nitrogen picom-pijulius-git neofetch polybar rofi zsh i3-wm i3status slock xclip scrot ttf-jetbrains-mono-nerd mpv ttf-daddytime-mono-nerd ttf-fira-sans lsd npm nodejs unzip zenity libnotify bluez bluez-utils dunst lxappearance-gtk3 btop cava gpick thunar imagemagick everforest-gtk-theme-git usbutils pipes.sh usbutils
+paru -S xorg xorg-xinit vim firefox alacritty neovim-nightly-bin git nitrogen picom-pijulius-git neofetch polybar rofi zsh i3-wm i3status slock xclip scrot ttf-jetbrains-mono-nerd mpv ttf-daddytime-mono-nerd ttf-fira-sans lsd npm nodejs unzip zenity libnotify bluez bluez-utils dunst lxappearance-gtk3 btop cava gpick thunar imagemagick everforest-gtk-theme-git usbutils pipes.sh usbutils dracula-gtk-theme
 
-# oh-my-zsh instalation
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # CLONING DOTS
 
@@ -25,9 +23,9 @@ cp -r $HOME/.config/dotfiles/* $HOME/.config/
 rm -rf $HOME/.config/dotfiles
 
 # TMUX
-mv $HOME/.config/tmux.conf $HOME/
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-tmux source $HOME/.tmux.conf
+#mv $HOME/.config/tmux.conf $HOME/
+#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+#tmux source $HOME/.tmux.conf
 # note: <c-s> + shift + i -> installing tmux plugins
 # <c-s> + " -> splitting panes
 # <c-h/j/k/l> -> switching panes
@@ -69,3 +67,6 @@ done
 
 
 printf "\nremember to add this line to the end of /etc/sudoers\nadi ALL=NOPASSWD: /sbin/reboot, /sbin/poweroff\n"
+
+# oh-my-zsh instalation
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
