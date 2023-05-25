@@ -1,6 +1,6 @@
 #!/bin/bash
 
-case "$(printf '󰐥 Shutdown\n Reboot\n Lock\n󱅟 Logout' | rofi -dmenu -p 'Choose 󰧂')" in
+case "$(printf '󰐥 Shutdown\n Reboot\n Lock\n󱅟 Logout' | rofi -dmenu -no-custom -p 'Choose 󰧂')" in
 
     '󰐥 Shutdown') sudo poweroff ;;
     ' Reboot') sudo reboot ;;
