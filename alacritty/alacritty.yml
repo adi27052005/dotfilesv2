@@ -171,8 +171,8 @@ colors:
   name: vscode (dark)
   author: senpai-10
   primary:
-    background: "#282a36"
-    foreground: "#f8f8f2"
+    background: "#1e2326"
+    foreground: "#d3c6aa"
   cursor:
     text: "#1d1f21"
     cursor: "#cccccc"

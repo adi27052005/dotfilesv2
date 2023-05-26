@@ -543,6 +543,6 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 
 -- COLORSCHEME
-vim.cmd.colorscheme 'dracula'
+vim.cmd.colorscheme "everforest"
 vim.cmd [[ set cursorline ]]
 vim.cmd [[ set scrolloff=8 ]]
