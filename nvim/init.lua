@@ -7,8 +7,7 @@
 Kickstart.nvim is *not* a distribution.
 
 Kickstart.nvim is a template for your own configuration.
-  The goal is that you can read every line of code, top-to-bottom, and understand
-  what your configuration is doing.
+  The goal is that you can read every line of code, top-to-bottom, and understand what your configuration is doing.
 
   Once you've done that, you should start exploring, configuring and tinkering to
   explore Neovim!
@@ -18,7 +17,6 @@ Kickstart.nvim is a template for your own configuration.
   - https://learnxinyminutes.com/docs/lua/
 
   And then you can explore or search through `:help lua-guide`
-
 
 Kickstart Guide:
 
@@ -131,6 +129,8 @@ require('lazy').setup({
     -- end,
   },
 
+  -- { 'itchyny/lightline.vim' },
+
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -139,8 +139,12 @@ require('lazy').setup({
       options = {
         icons_enabled = false,
         theme = 'auto',
-        component_separators = '|',
-        section_separators = '',
+        -- component_separators = '|',
+        -- section_separators = '',
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' }
+        -- component_separators = { left = '', right = '' },
+        -- section_separators = { left = '', right = '' },
       },
     },
   },
@@ -186,11 +190,31 @@ require('lazy').setup({
 
   -- MY CUSTOM PLUGINS
 
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
+
   -- THEMES
+  { 'dracula/vim' },
+  { 'folke/tokyonight.nvim' },
+  { 'AhmedAbdulrahman/aylin.vim' },
   { 'sainnhe/everforest' },
   { "morhetz/gruvbox" },
   { 'Everblush/everblush.nvim' },
   -- { 'joshdick/onedark.vim' },
+  --
+  {'romgrk/barbar.nvim',
+    dependencies = {
+      'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+      'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+    },
+    init = function() vim.g.barbar_auto_setup = false end,
+    opts = {
+      -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+      -- animation = true,
+      -- insert_at_start = true,
+      -- …etc.
+    },
+    version = '^1.0.0', -- optional: only update when a new 1.x version is released
+  },
 
   { 'nvim-tree/nvim-tree.lua',
     config = function()  require("nvim-tree").setup({
@@ -209,7 +233,8 @@ require('lazy').setup({
   { 'windwp/nvim-ts-autotag' },
   { "derektata/lorem.nvim" },
   { 'xiyaowong/nvim-transparent' },
-  { 'dracula/vim' }
+  -- { 'nvim-orgmode/orgmode' },
+  -- { 'jceb/vim-orgmode' },
 
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -250,7 +275,7 @@ vim.o.clipboard = 'unnamedplus'
 vim.o.breakindent = true
 
 -- Save undo history
-vim.o.undofile = true
+vim.o.undofile = false
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
@@ -543,6 +568,23 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 
 -- COLORSCHEME
-vim.cmd.colorscheme "everforest"
+vim.cmd.colorscheme "aylin"
 vim.cmd [[ set cursorline ]]
 vim.cmd [[ set scrolloff=8 ]]
+vim.cmd [[ set noshowmode ]]
+vim.keymap.set('n', '<c-x>', ':w | !g++ -o myprogram % && ./myprogram<CR>')
+vim.keymap.set('n', '<c-t>', ':ToggleTerm size=20 direction=horizontal<CR>')
+
+vim.keymap.set('n', '<Tab><Right>', ':BufferNext<CR>')
+vim.keymap.set('n', '<Tab>l', ':BufferNext<CR>')
+vim.keymap.set('n', '<Tab><Left>', ':BufferPrevious<CR>')
+vim.keymap.set('n', '<Tab>h', ':BufferPrevious<CR>')
+vim.keymap.set('n', '<S-Tab><Right>', ':BufferMoveNext<CR>')
+vim.keymap.set('n', '<S-Tab>l', ':BufferMoveNext<CR>')
+vim.keymap.set('n', '<S-Tab><Left>', ':BufferMovePrevious<CR>')
+vim.keymap.set('n', '<S-Tab>h', ':BufferMovePrevious<CR>')
+
+vim.keymap.set('n', '<Tab>1', ':BufferFirst<CR>')
+vim.keymap.set('n', '<Tab>2', ':BufferLast<CR>')
+vim.keymap.set('n', '<Tab>x', ':BufferClose<CR>')
+vim.keymap.set('n', '<Tab>n', ':tabnew ')
