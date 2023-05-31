@@ -1,0 +1,11 @@
+{
+  "channel" : "release",
+  "customChannels" : [],
+  "deviceId" : 568289389950715729,
+  "formatVersion" : 0,
+  "locale" : "en-US",
+  "productLibraryDir" : "C:\\Users\\Asus\\AppData\\Local\\Mojang\\products",
+  "useArm64JreIfSupported" : false,
+  "useMagnifiedMode" : false,
+  "version" : 4
+}
