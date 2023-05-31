@@ -10,8 +10,10 @@ cd ~
 
 # PACKAGES
 
-paru -S xorg xorg-xinit vim firefox alacritty neovim-nightly-bin git nitrogen picom-pijulius-git neofetch polybar rofi zsh i3-wm i3status slock xclip scrot ttf-jetbrains-mono-nerd mpv ttf-daddytime-mono-nerd ttf-fira-sans lsd npm nodejs unzip zenity libnotify bluez bluez-utils dunst lxappearance-gtk3 btop cava gpick thunar imagemagick everforest-gtk-theme-git usbutils pipes.sh usbutils dracula-gtk-theme
+paru -S xorg xorg-xinit vim firefox alacritty neovim-nightly-bin git nitrogen picom-pijulius-git neofetch polybar rofi zsh i3-wm i3status slock xclip scrot ttf-jetbrains-mono-nerd mpv ttf-daddytime-mono-nerd ttf-fira-sans lsd npm nodejs unzip zenity libnotify bluez bluez-utils dunst lxappearance-gtk3 btop cava gpick thunar imagemagick everforest-gtk-theme-git usbutils pipes.sh usbutils dracula-gtk-theme mtpfs jmtpfs gvfs-mtp gvfs-gphoto2 tldr
 
+# gay u are gay 
+# -Dev Bha 26.05.23
 
 # CLONING DOTS
 
