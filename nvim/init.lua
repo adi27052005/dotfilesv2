@@ -5,6 +5,7 @@
 =====================================================================
 
 Kickstart.nvim is *not* a distribution.
+
 Kickstart.nvim is a template for your own configuration.
   The goal is that you can read every line of code, top-to-bottom, and understand what your configuration is doing.
 
@@ -95,7 +96,9 @@ require('lazy').setup({
     -- Autocompletion
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', 'rafamadriz/friendly-snippets' },
-  }, -- Useful plugin to show you pending keybinds.
+  },
+
+  -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
@@ -117,34 +120,34 @@ require('lazy').setup({
     },
   },
 
-  -- {
-  --   -- Theme inspired by Atom
-  --   'navarasu/onedark.nvim',
-  --   priority = 1000,
-  --   -- config = function()
-  --   --   vim.cmd.colorscheme 'onedark'
-  --   -- end,
-  -- },
+  {
+    -- Theme inspired by Atom
+    'navarasu/onedark.nvim',
+    priority = 1000,
+    -- config = function()
+    --   vim.cmd.colorscheme 'onedark'
+    -- end,
+  },
 
   -- { 'itchyny/lightline.vim' },
 
-  -- {
-  --   -- Set lualine as statusline
-  --   'nvim-lualine/lualine.nvim',
-  --   -- See `:help lualine.txt`
-  --   opts = {
-  --     options = {
-  --       icons_enabled = false,
-  --       theme = 'auto',
-  --       -- component_separators = '|',
-  --       -- section_separators = '',
-  --       section_separators = { left = '', right = '' },
-  --       component_separators = { left = '', right = '' }
-  --       -- component_separators = { left = '', right = '' },
-  --       -- section_separators = { left = '', right = '' },
-  --     },
-  --   },
-  -- },
+  {
+    -- Set lualine as statusline
+    'nvim-lualine/lualine.nvim',
+    -- See `:help lualine.txt`
+    opts = {
+      options = {
+        icons_enabled = false,
+        theme = 'auto',
+        -- component_separators = '|',
+        -- section_separators = '',
+        section_separators = { left = '', right = '' },
+        component_separators = { left = '', right = '' }
+        -- component_separators = { left = '', right = '' },
+        -- section_separators = { left = '', right = '' },
+      },
+    },
+  },
 
   {
     -- Add indentation guides even on blank lines
@@ -152,8 +155,7 @@ require('lazy').setup({
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
     opts = {
-      -- char = '┊',
-      char = '',
+      char = '┊',
       show_trailing_blankline_indent = false,
     },
   },
@@ -191,32 +193,16 @@ require('lazy').setup({
   {'akinsho/toggleterm.nvim', version = "*", config = true},
 
   -- THEMES
-  -- { 'dracula/vim' },
-  -- { 'folke/tokyonight.nvim' },
-  -- { 'AhmedAbdulrahman/aylin.vim' },
+  { 'dracula/vim' },
+  { 'folke/tokyonight.nvim' },
+  { 'AhmedAbdulrahman/aylin.vim' },
   { 'sainnhe/everforest' },
   { "morhetz/gruvbox" },
-  { "ghifarit53/tokyonight-vim" },
-  { "LunarVim/horizon.nvim" },
-  { "LunarVim/tokyonight.nvim" },
+  { 'Everblush/everblush.nvim' },
+  { 'norcalli/nvim-colorizer.lua' },
   { "Shatur/neovim-ayu" },
-  { "LunarVim/synthwave84.nvim" },
-  { "LunarVim/lualine.nvim",
-  opts = {
-      options = {
-        icons_enabled = true,
-        theme = 'auto',
-        section_separators = {'', ""},
-        component_separators = {'', ''}
-      },
-    },
-  },
-  -- { 'srcery-colors/srcery-vim' },
-  { 'catppuccin/nvim' },
   -- { 'joshdick/onedark.vim' },
   --
-
-
   {'romgrk/barbar.nvim',
     dependencies = {
       'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
@@ -588,8 +574,8 @@ vim.cmd.colorscheme "ayu-mirage"
 vim.cmd [[ set cursorline ]]
 vim.cmd [[ set scrolloff=8 ]]
 vim.cmd [[ set noshowmode ]]
-vim.keymap.set('n', '<c-x>', ':!g++ -o myprogram % && ./myprogram<CR>')
-vim.keymap.set('n', '<c-t>', ':ToggleTerm size=20 direction=horizontal<CR>')
+vim.keymap.set('n', '<c-x>', ':w | !g++ -o myprogram % && ./myprogram<CR>')
+vim.keymap.set('n', '<c-t>', ':ToggleTerm size=50 direction=vertical<CR>')
 
 vim.keymap.set('n', '<Tab><Right>', ':BufferNext<CR>')
 vim.keymap.set('n', '<Tab>l', ':BufferNext<CR>')

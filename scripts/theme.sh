@@ -13,6 +13,8 @@ case $(printf "Dracula\nEverforest" | rofi -dmenu -i -no-custom -p " Theme") 
         sed -i 's/a7c080/bd93f9/g' $HOME/.config/rofi/nord.rasi ;
         sed -i 's/1e2326/282a36/g' $HOME/.config/rofi/nord.rasi ;
         sed -i 's/d3c6aa/f8f8f2/g' $HOME/.config/rofi/nord.rasi ;
+        sed -i 's/gtk-theme-name=Everforest-Dark-Border/gtk-theme-name=Dracula/g' $HOME/.config/gtk-3.0/settings.ini;
+        echo "Dracula" > theme.txt
         i3-msg restart ;
         ;;
 
@@ -28,6 +30,8 @@ case $(printf "Dracula\nEverforest" | rofi -dmenu -i -no-custom -p " Theme") 
         sed -i 's/bd93f9/a7c080/g' $HOME/.config/rofi/nord.rasi ;
         sed -i 's/282a36/1e2326/g' $HOME/.config/rofi/nord.rasi ;
         sed -i 's/f8f8f2/d3c6aa/g' $HOME/.config/rofi/nord.rasi ;
+        sed -i 's/gtk-theme-name=Dracula/gtk-theme-name=Everforest-Dark-Border/g' $HOME/.config/gtk-3.0/settings.ini;
+        echo "Everforest" > theme.txt
         i3-msg restart ;
         ;; 
     

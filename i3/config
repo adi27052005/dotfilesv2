@@ -57,6 +57,7 @@ bindsym $mod+c kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -186,13 +187,15 @@ bindsym $mod+r mode "resize"
 
 
 # Custom
-exec_always picom --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 200 &
-# exec_always picom &
+# exec_always picom --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 200 &
+exec_always picom &
 exec_always nitrogen --restore &
+# exec_always $HOME/.config/scripts/wallpaper_theme.sh
 exec_always $HOME/.config/polybar/launch.sh
+exec_always $HOME/.config/conky/launch.sh
 
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 gaps inner 4
 
@@ -203,10 +206,32 @@ client.unfocused        #1e2326 #222222 #888888 #292d2e   #1e2326
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.background       #1e2326
-
+# client.background       #1e2326
+#
 bindsym $mod+Shift+w exec "firefox"
 bindsym $mod+x exec $HOME/.config/scripts/powermenu.sh
 bindsym $mod+Shift+Return exec $HOME/.config/scripts/yt.sh
-bindsym $mod+Shift+t exec $HOME/.config/scripts/theme.sh
+bindsym $mod+Shift+b exec $HOME/.config/scripts/brightness.sh
+# bindsym $mod+Shift+t exec $HOME/.config/scripts/theme.sh
 bindsym $mod+p exec python3 $HOME/.config/scripts/password.py
+exec_always wal -R
+
+
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+# client.focused_inactive $bg     $bg     $fg  $bg       $bg
+# client.unfocused        $bg     $bg     $fg  $bg       $bg
+# client.urgent           $bg     $bg     $fg  $bg       $bg
+# client.placeholder      $bg     $bg     $fg  $bg       $bg
+#
+client.background       #000000 
+
+exec_always wal -i $(cat $HOME/.config/nitrogen/bg-saved.cfg | grep file= | cut -d "=" -f2)
