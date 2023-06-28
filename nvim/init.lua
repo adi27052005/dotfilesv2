@@ -197,6 +197,7 @@ require('lazy').setup({
   { 'folke/tokyonight.nvim' },
   { 'AhmedAbdulrahman/aylin.vim' },
   { 'sainnhe/everforest' },
+  { 'sainnhe/gruvbox-material' },
   { "morhetz/gruvbox" },
   { 'Everblush/everblush.nvim' },
   { 'norcalli/nvim-colorizer.lua' },

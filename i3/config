@@ -189,10 +189,10 @@ bindsym $mod+r mode "resize"
 # Custom
 # exec_always picom --animations --animation-window-mass 0.5 --animation-for-open-window zoom --animation-stiffness 200 &
 exec_always picom &
-exec_always nitrogen --restore &
+exec_always nitrogen --set-zoom-fill $HOME/wallpapers/5b1iuo0xlth61.png &
 # exec_always $HOME/.config/scripts/wallpaper_theme.sh
-exec_always $HOME/.config/polybar/launch.sh
-exec_always $HOME/.config/conky/launch.sh
+exec_always $HOME/.config/i3/polybar/launch.sh
+exec_always $HOME/.config/i3/conky/launch.sh
 
 default_border pixel 2
 default_floating_border pixel 2
@@ -214,7 +214,7 @@ bindsym $mod+Shift+Return exec $HOME/.config/scripts/yt.sh
 bindsym $mod+Shift+b exec $HOME/.config/scripts/brightness.sh
 # bindsym $mod+Shift+t exec $HOME/.config/scripts/theme.sh
 bindsym $mod+p exec python3 $HOME/.config/scripts/password.py
-exec_always wal -R
+# exec_always wal -R
 
 
 # Set colors from Xresources
@@ -226,7 +226,7 @@ set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused          $bg     $bg     $fg  $bg       #ebdbb2
 # client.focused_inactive $bg     $bg     $fg  $bg       $bg
 # client.unfocused        $bg     $bg     $fg  $bg       $bg
 # client.urgent           $bg     $bg     $fg  $bg       $bg
@@ -234,4 +234,5 @@ client.focused          $bg     $bg     $fg  $bg       $bg
 #
 client.background       #000000 
 
-exec_always wal -i $(cat $HOME/.config/nitrogen/bg-saved.cfg | grep file= | cut -d "=" -f2)
+# exec_always wal -i $(cat $HOME/.config/nitrogen/bg-saved.cfg | grep file= | cut -d "=" -f2)
+exec_always wal --theme base16-gruvbox-hard
