@@ -22,7 +22,8 @@ git clone https://github.com/adi27052005/dotfiles $HOME/.config/dotfiles
 # MOVING DOTS
 
 cp -r $HOME/.config/dotfiles/* $HOME/.config/
-rm -rf $HOME/.config/dotfiles
+# rm -rf $HOME/.config/dotfiles
+chmod +x $HOME/.config/i3/polybar/launch.sh
 
 # TMUX
 #mv $HOME/.config/tmux.conf $HOME/
